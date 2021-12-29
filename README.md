@@ -58,6 +58,7 @@ Sparta Coding Camp - Team Proejct 1. Instagram Clone Coding
 |로그인|POST|/login|{'email':email, 'pw':pw}|
 |회원가입|POST|/register|{'email':email, 'pw':pw}||
 |이메일인증|POST|/register2|.|.|
+|CRUD|.|.|.|.|
 <br>
 <br>
 
