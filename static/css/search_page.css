@@ -1,0 +1,133 @@
+* {
+    font-family: 'Dongle', sans-serif;
+}
+
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom-width: 0.1vh;
+    border-bottom-style: solid;
+    border-bottom-color: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 15vw;
+    position: fixed;
+    background-color: white;
+    padding-left: 5vw;
+}
+
+
+.mobile-footer {
+    border-top-width: 0.1vh;
+    border-top-style: solid;
+    border-top-color: lightgrey;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 21vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+}
+.back-img {
+            height: 6vw;
+        }
+
+.home-btn {
+    height: 6vw;
+    width: 6vw;
+
+    background-image: url("../images/home@3x.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: none;
+    background-color: transparent;
+}
+
+.search-btn {
+    height: 6vw;
+    width: 6vw;
+
+    background-image: url("../images/search@3x.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: none;
+    background-color: transparent;
+}
+.real-search-btn {
+    height: 5vw;
+    width: 5vw;
+
+    background-image: url("../images/search@3x.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: none;
+    background-color: transparent;
+}
+
+.plus-btn {
+    height: 7vw;
+    width: 7vw;
+
+    background-image: url("../images/plus.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: none;
+    background-color: transparent;
+}
+
+.favorite-btn {
+    height: 5.4vw;
+    width: 6vw;
+
+    background-image: url("../images/like@3x.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: none;
+    background-color: transparent;
+}
+
+.my-page-img-btn {
+    border-radius: 50%;
+    height: 6vw;
+    width: 6vw;
+
+    background-image: url("../images/무민.jfif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: none;
+    background-color: transparent;
+}
+.search_container {
+    margin-left: 5vw;
+    padding-left: 3vw;
+    background-color: lightgray;
+    width: 70vw;
+    height: 10vw;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+}
+#search_input{
+    border: 0;
+    background-color: transparent;
+    font-size: 5vw;
+    padding-left: 2vw;
+}
