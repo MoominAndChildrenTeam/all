@@ -6,9 +6,13 @@ import jwt
 import datetime
 import hashlib
 import random
+import gridfs
+import codecs
+from datetime import datetime
 
-client = MongoClient('mongodb+srv://jcode:1234@cluster0.z0xvg.mongodb.net/Cluster0?retryWrites=true&w=majority',tlsCAFile=certifi.where())
-db = client.dbsparta
+client = MongoClient('mongodb+srv://test:sparta@cluster0.sylvm.mongodb.net/Cluster0?retryWrites=true&w=majority',tlsCAFile=certifi.where())
+db = client.moomin
+fs = gridfs.GridFS(db)
 
 RANDOM_CHAR = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZ'
 CHOISE_CHAR = ''
@@ -92,20 +96,99 @@ def register2():
 def search():
     return render_template('search.html')
 
+
+
+# main
+@app.route('/main_page')
+def mainpage():
+    return render_template('index.html')
+
+
+# @app.route('/other_userpage')
+# def otheruser():
+#     return render_template('other_user_page.html')
+
+@app.route('/other_user_page', methods=["POST"])
+def get_follower():
+    follower_count = request.form['follower_count']
+    follow_status = request.form['follow_status']
+    db.users.update_one({'nickname': '한장원'}, {'$set': {'follower': follower_count}})
+    db.users.update_one({'nickname': '한장원'}, {'$set': {'follow_status': follow_status}})
+
+
+
+@app.route("/users", methods=["GET"])
+def user_get():
+    user = db.users.find_one()['nickname']
+    return jsonify({'user': user})
+
+## 모든 피드를 불러옴
+@app.route("/mainpage", methods=["GET"])
+def all_feed_get():
+    all_feed_list = list(db.all_feeds.find({}, {'_id': False}))
+    return jsonify({'all_feeds': all_feed_list})
+
+
+
+
+## 내가 쓴 글만 불러옴
+@app.route("/mypage", methods=["GET"])
+def feed_get():
+    feed_list = list(db.my_feeds.find({}, {'_id': False}))
+    feed_count = db.my_feeds.count_documents({})
+    return jsonify({'my_feeds': feed_list, 'feed_count': feed_count})
+
 # 글쓰기
 @app.route('/write')
 def write():
     return render_template('write.html')
 
+@app.route('/upload_page', methods=['POST'])
+def file_upload():
+    id = db.all_feeds.count_documents({}) + 1
+    file_user_receive = db.users.find_one()['nickname']
+    comment_receive = request.form['comment_give']
+    uploaded_files = request.files['filename_give']
+    extension = uploaded_files.filename.split('.')[-1]
+    today = datetime.now()
+    mytime = today.strftime('%Y-%m-%d-%H-%M-%S')
+    filename = f'{file_user_receive} - {mytime}'
+    save_to = f'static/{filename}.{extension}'
+    uploaded_files.save(save_to)
+    date = datetime.today().strftime("%m{} %d{}")
+    date = date.format('월', '일')
+    like = False
+
+    doc = {
+        'id': id,
+        'name': file_user_receive,
+        'date': date,
+        'image': f'{filename}.{extension}',
+        'comment': comment_receive,
+        'like': like
+    }
+    db.my_feeds.insert_one(doc)
+    db.all_feeds.insert_one(doc)
+
+    return jsonify({'msg': '저장 완료'})
+
+# like/unlike
+@app.route('/mainpage', methods=["POST"])
+def set_like():
+    like_receive = request.form['like_give']
+    like_user = db.all_feeds.find_one({'name'})
+    db.all_feeds.update_one({'name': '한장원'}, {'$set': {'like': like_receive}})  ## name 을 게시글만든 user로 바꿔야함
+    return jsonify({'msg': '좋아요'})
+
 # 좋아요/찜
-@app.route('/like')
-def like():
-    return render_template('like.html')
+# @app.route('/like')
+# def like():
+#     return render_template('like.html')
 
 # 마이페이지
 @app.route('/mypage')
 def my_page():
-    return render_template('mypage.html')
+    return render_template('my_page.html')
 
 
 ##################### API #############################################

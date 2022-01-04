@@ -27,7 +27,7 @@
     bottom: 0;
     right: 0;
     width: 100%;
-    height: 21vw;
+    height: 15vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -39,6 +39,17 @@
     border-radius: 50%;
     height: 10vw;
     width: 10vw;
+
+}
+
+.icon2 {
+    height: 6vw;
+    object-fit: cover;
+}
+
+.icon3 {
+    height: 10vw;
+    object-fit: cover;
 }
 
 
@@ -95,71 +106,6 @@
     height: 6vw;
 }
 
-.home-btn {
-    height: 6vw;
-    width: 6vw;
-
-    background-image: url("../images/home@3x.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    border: none;
-    background-color: transparent;
-}
-
-.search-btn {
-    height: 6vw;
-    width: 6vw;
-
-    background-image: url("../images/search@3x.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    border: none;
-    background-color: transparent;
-}
-
-.plus-btn {
-    height: 7vw;
-    width: 7vw;
-
-    background-image: url("../images/plus.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    border: none;
-    background-color: transparent;
-}
-
-.favorite-btn {
-    height: 5.4vw;
-    width: 6vw;
-
-    background-image: url("../images/like@3x.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    border: none;
-    background-color: transparent;
-}
-
-.my-page-img-btn {
-    border-radius: 50%;
-    height: 6vw;
-    width: 6vw;
-
-    background-image: url("../images/무민.jfif");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    border: none;
-    background-color: transparent;
-}
 
 .img-container .drag-file {
     position: relative;
