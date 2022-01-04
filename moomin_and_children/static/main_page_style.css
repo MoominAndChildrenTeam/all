@@ -1,0 +1,296 @@
+* {
+    font-family: 'Dongle', sans-serif;
+}
+
+.whole-screen {
+    margin: 0;
+
+    width: 100%;
+}
+
+.header {
+    border-bottom: 0.1vh solid lightgrey;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 15vw;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+}
+
+.empty-box-for-adjust-distance {
+    height: 6vw;
+    width: 7vw;
+}
+/* 기능 구현 실패로 숨김 처리
+.camera-btn-box {
+    height: 7vw;
+    width: 7vw;
+    background-color: white;
+}
+*/
+.logo-img {
+    width: 40vw;
+    height: 15vw;
+}
+
+.body {
+    width: 100%;
+
+    padding-bottom: 15vw;
+}
+
+.story {
+    height: 16vw;
+    background-color: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.users-stories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+
+    overflow: auto;
+}
+
+/* 스토리 부분 스크롤바 관련 참고 코드
+.users-stories::-webkit-scrollbar {
+    display: none;
+}
+*/
+
+.each-user-story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 2%;
+}
+
+.each-user-story > p {
+    margin: 0;
+
+    font-weight: bold;
+    font-size: 3vw;
+}
+
+.user-story-img-btn {
+    border-radius: 50%;
+    height: 10vw;
+    width: 10vw;
+
+    border: none;
+    background-color: transparent;
+}
+
+.feed {
+    display: flex;
+    flex-direction: column;
+
+    border-top: solid rgba(211, 211, 211, 0.3);
+
+    width: 100%;
+}
+
+.user-name-and-img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+}
+
+.feed-user-img {
+    margin: 1% 2%;
+
+}
+
+.feed-user-name {
+    font-weight: bold;
+    font-size: 4vw;
+}
+
+.user-page-img-btn {
+    border-radius: 50%;
+    height: 7vw;
+    width: 7vw;
+
+    border: none;
+    background-color: transparent;
+}
+
+.feed > img {
+    width: 100%;
+}
+
+.active-btns-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 3% 5% 0 5%;
+}
+
+.comment-btn {
+    height: 6vw;
+}
+
+.like-btn {
+    height: 6vw;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.feed-content-box {
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 3%;
+}
+
+.feed-user-name-of-content {
+    font-weight: bold;
+    font-size: 4vw;
+
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.feed-content {
+    font-size: 4vw;
+
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.user-comment-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-comment-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding-left: 3%;
+}
+
+.comment-user-name {
+    margin: 0 2% 2% 0;
+
+    font-weight: bold;
+    font-size: 3vw;
+}
+
+.comment {
+    margin-top: 2%;
+    padding: 0;
+    width: 100%;
+
+    font-size: 3vw;
+
+    border: none;
+}
+
+.feed-time-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding-left: 3%;
+}
+
+.feed-time {
+    margin-bottom: 0;
+
+    color: lightgrey;
+
+    font-size: 2vw;
+}
+
+.comment-container {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+    height: 10vw;
+}
+
+.comment-content {
+    width: 100%;
+
+    border: 1px solid rgba(211, 211, 211, 0.3);
+}
+
+.comment-register {
+    background-color: white;
+    color: dodgerblue;
+    font-weight: bold;
+
+    width: 10%;
+
+    border: none;
+}
+
+.mobile-footer {
+    border-top: 0.1vh solid lightgrey;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 15vw;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: white;
+}
+
+.home-btn {
+    height: 6vw;
+}
+
+.search-btn {
+    height: 6vw;
+}
+
+.plus-btn {
+    height: 10vw;
+}
+
+.favorite-btn {
+    height: 6vw;
+}
+
+.my-page-img-btn {
+    border-radius: 50%;
+    height: 10vw;
+    width: 10vw;
+}
+
+@media screen {
+    .comment-container.active {
+        display: flex;
+    }
+}
